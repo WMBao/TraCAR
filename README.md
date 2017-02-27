@@ -21,6 +21,7 @@ After initialization, the PC program will automatically capture and process the 
 
 ## File Structure
 
+|标题1|标题2|
 |:---|:---|
 |PC-end/   |*files for the PC program*|
 |PC-end/build/   |*an executable file for the PC program*|
