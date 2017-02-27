@@ -1,0 +1,1084 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>PC自动控制小车走黑线-第25组-2016春-课程报告</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="《工程实践与科技创新2B》课程项目报告网站。2016年春季，第25组，基于OpenCV与蓝牙的跨平台自动控制项目方案，实现PC端自动控制Arduino平台小车走黑线。" />
+<!-- css links -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/slider.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="css/facultystyle.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+<!-- /css links -->
+ <link href="http://fonts.useso.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+ <!--/link href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css"-->
+ <link href="http://fonts.useso.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600" rel="stylesheet" type="text/css">
+ <!--/link href="//fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet" type="text/css"-->
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script> 
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.htm">Group 25</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="#tt">小组成员</a></li>
+				<li><a href="#about">项目简介</a></li>
+				<li><a href="#car">小车端实现</a></li>
+				<li><a href="#pc">PC端实现</a></li>
+				<li><a href="#feaimp">特色及改进</a></li>
+				<li><a href="#thoughts">组员体悟</a></li>
+				<li><a href="#appendix">参考文献</a></li>
+				<li><a href="#gratitude">致谢</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<!-- /Fixed navbar -->	
+	
+<!-- Banner -->
+	<div class="slider">
+		
+			<div  id="top" class="callbacks_container-wrap">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="slider1"></div>
+					</li>
+					<li>
+						<div class="slider1 slider2"></div>
+					</li>
+					<li>
+						<div class="slider1 slider3"></div>
+					</li>
+			</div>
+	</div>
+<!-- /Banner -->
+<!-- /TextTitle -->
+<section id="texttitle">
+	<div class="texttitle">
+	<div class="container">
+		<div class="abouttop" id="tt">
+			<h2>PC自动控制小车走黑线</h2>
+			<h3>——《工程实践与科技创新2B》课程报告</h3>
+		</div>
+	</div>
+	</div>
+</section>
+<!-- /TextTitle -->
+
+<!-- Faculty Section -->
+<div class="faculty" id="faculty">
+	<div class="container">
+	    <div class="ftop">
+		    <h3>小组成员</h3>
+			<label class="line"></label>
+	    </div>
+        <div class="col-md-3 col-sm-3 fgrids">
+			<div class="view view-fourth">
+                <img src="images/t1.jpg" />
+            </div>
+		 	<div class="ftext">
+				<h4>包伟铭（组长）</h4>
+				<label class="fline"></label>
+				<h5>OpenCV代码调试，分工协调，小车组装，联合调试，课程项目报告（网页）</h5>
+			</div>
+		</div>
+	    <div class="col-md-3 col-sm-3 fgrids">
+			<div class="view view-fourth">
+                <img src="images/t2.jpg" />
+            </div>
+			<div class="ftext">
+		        <h4>刘兴阳</h4>
+		        <label class="fline"></label>
+		        <h5>模块调试，Arduino代码编写，小车组装，联合调试，课程项目报告</h5>
+	        </div>
+	    </div>
+	    <div class="col-md-3 col-sm-3 fgrids">
+	        <div class="view v
+	        iew-fourth">
+                <img src="images/t3.jpg" />
+            </div>
+			<div class="ftext">
+		        <h4>罗　晶</h4>
+		        <label class="fline"></label>
+		        <h5>PC端代码编写，小车组装，跑道制作，联合调试，视频制作，课程项目报告</h5>
+	        </div>
+	    </div>
+	   <div class="col-md-3 col-sm-3 fgrids">
+	        <div class="view view-fourth">
+                <img src="images/t4.jpg" />
+            </div>
+			<div class="ftext">
+		        <h4>庞　博</h4>
+		        <label class="fline"></label>
+		        <h5>PC端代码调试，小车组装，跑道制作，联合调试，视频制作，课程项目报告</h5>
+	        </div>
+	    </div>
+	    <div class="clearfix"></div>
+    </div>
+</div>
+<!-- /Faculty Section -->
+<!-- About -->
+<section >
+	<div class="about">
+	<div class="container">
+		<div class="container" id="about">
+		<div class="abouttop">
+		<div class="col-md-12 col-sm-12">
+			<h3>项目简介</h3>
+			<label class="line"></label>
+			<h4>本组的选题为：小车走黑线。</h4>
+			<h6>　	PC端软件调用摄像头获取路线信息，自动分析小车偏离情况，通过蓝牙交互控制小车循迹行进。</h6>
+			<label class="line"></label>
+			<h4>主要实现了以下功能：</h4>
+			<h6>1.	自购组件组装小车：实现了Arduino 平台下的“舵机控制”与“差速”两种转向方式。</h6>
+			<h6>2.	图像处理（基于OpenCV2.4的主机端图像获取，二值化，冲蚀变换，角点识别等）及轨迹生成。</h6>
+			<h6>3.	小车与主机间的蓝牙串口通信：PC端分析实时图像，调用Windows Bluetooth API发送控制指令，小车接收识别并进行对应操作。</h6>
+			<h6>4.	主机相对小车间的闭环控制：软件端比对小车在行进过程中与轨道的相对位置，生成闭环控制指令，实现小车姿态矫正。</h6>
+			<label class="line"></label>
+			<h4><a href="./b25video1.mp4">项目展示视频1</a></h4>
+			<h4><a href="./b25video2.mp4">项目展示视频2</a></h4>
+			</div>
+			<div class="clearfix"></div>
+		</div>	
+		</div>	
+	</div>
+	</div>
+</section>
+<!-- /About -->
+
+
+
+<!-- Stats Section -->
+<div class="stats" id="stats">
+	<div class="container">
+		<div class="stats-info">
+			<div class="col-md-4 col-sm-4 stats-grid slideanim">
+				<div class="numscroller numscroller-big-bottom" data-slno="1" data-min="1" data-max="1" data-delay=".5" data-increment="1">1</div>
+				<label class="line"></label>
+				<p class="stats-info">自制小车</p>
+			</div>
+			<div class="col-md-4 col-sm-4 stats-grid slideanim">
+				<div class="numscroller numscroller-big-bottom" data-slno="1" data-min="0" data-max="150" data-delay=".5" data-increment="1">150</div>
+				<label class="line"></label>
+				<p class="stats-info">小车端代码</p>
+			</div>
+			<div class="col-md-4 col-sm-4 stats-grid slideanim">
+				<div class="numscroller numscroller-big-bottom" data-slno="1" data-min="0" data-max="782" data-delay=".5" data-increment="2">782</div>
+				<label class="line"></label>
+				<p class="stats-info">PC端代码</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+    </div>
+</div>
+<!-- Stats Section -->
+
+<!-- Gallery Section -->
+<div class="gallery" id="gallery">
+	<div class="container">
+	    <h3 id="car">实现方案</h3>
+		<label class="line"></label>
+	<h2 style="font-size:28pt; line-height:173%; margin:13pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+   
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold">2.1</span>
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">小车端实现</span>
+      </h2>
+		<h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+   
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.1.1</span>
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">硬件部分</span>
+      </h3>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:Calibri; font-size:26pt">Arduino Mega2560</span>
+        <span style="font-family:宋体; font-size:26pt">单片机</span>
+        <span style="font-family:宋体; font-size:26pt">开发板</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/1.jpg" height="182" alt="" style="-aw-left-pos:0pt; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">1</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">ARDUINO MEGA2560</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">我们组</span>
+        <span style="font-family:宋体; font-size:24pt">的小车采用</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">Ar</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">duino Mega</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">2560</span>
+        <span style="font-family:宋体; font-size:24pt">单片机平台</span>
+        <span style="font-family:宋体; font-size:24pt">作为小车的</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">“</span>
+        <span style="font-family:宋体; font-size:24pt">大脑</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">”</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">处理从主机端</span>
+        <span style="font-family:宋体; font-size:24pt">接收</span>
+        <span style="font-family:宋体; font-size:24pt">的信号，</span>
+        <span style="font-family:宋体; font-size:24pt">控制</span>
+        <span style="font-family:宋体; font-size:24pt">小车</span>
+        <span style="font-family:宋体; font-size:24pt">上</span>
+        <span style="font-family:宋体; font-size:24pt">的电机和舵机，</span>
+        <span style="font-family:宋体; font-size:24pt">使小车能够</span>
+        <span style="font-family:宋体; font-size:24pt">按照主机端的控制进行运动。</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:Calibri; font-size:26pt">HC-06</span>
+        <span style="font-family:宋体; font-size:26pt">主从</span>
+        <span style="font-family:宋体; font-size:26pt">一体蓝牙模块</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/2.jpg" width="355" height="174" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">2</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">HC-06</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">蓝牙模块</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">HC-06</span>
+        <span style="font-family:宋体; font-size:24pt">主从一体蓝牙模块采用低成本、低功耗</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">CSR</span>
+        <span style="font-family:宋体; font-size:24pt">芯片，支持蓝牙</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">v2.0</span>
+        <span style="font-family:宋体; font-size:24pt">协议标准，可以实现终端在空旷环境下</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">10M</span>
+        <span style="font-family:宋体; font-size:24pt">内通讯，使用广泛。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">在</span>
+        <span style="font-family:宋体; font-size:24pt">我们组的小车中，</span>
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">用</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">HC-06</span>
+        <span style="font-family:宋体; font-size:24pt">与电脑配对，</span>
+        <span style="font-family:宋体; font-size:24pt">以此</span>
+        <span style="font-family:宋体; font-size:24pt">接收电脑传递的</span>
+        <span style="font-family:宋体; font-size:24pt">字符串</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">并通过</span>
+        <span style="font-family:宋体; font-size:24pt">单片机的</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">RX</span>
+        <span style="font-family:宋体; font-size:24pt">、</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">TX</span>
+        <span style="font-family:宋体; font-size:24pt">端口与单片机进行通信。</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:Calibri; font-size:26pt">Futaba S3003</span>
+        <span style="font-family:宋体; font-size:26pt">舵机</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/3.jpg" width="304" height="243" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">3</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">FUTABA S3003</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">舵机</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">也称为</span>
+        <span style="font-family:宋体; font-size:24pt">伺服电机，</span>
+        <span style="font-family:宋体; font-size:24pt">主要由</span>
+        <span style="font-family:宋体; font-size:24pt">直流电机、</span>
+        <span style="font-family:宋体; font-size:24pt">减速</span>
+        <span style="font-family:宋体; font-size:24pt">齿轮组、</span>
+        <span style="font-family:宋体; font-size:24pt">传感器</span>
+        <span style="font-family:宋体; font-size:24pt">和控制电路组成，</span>
+        <span style="font-family:宋体; font-size:24pt">可根据</span>
+        <span style="font-family:宋体; font-size:24pt">接收到的</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">PWM</span>
+        <span style="font-family:宋体; font-size:24pt">信号调整转过的角度。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">小组的小车利用舵机来控制小车前进的方向，</span>
+        <span style="font-family:宋体; font-size:24pt">使用的最大</span>
+        <span style="font-family:宋体; font-size:24pt">角度</span>
+        <span style="font-family:宋体; font-size:24pt">范围约</span>
+        <img src="" width="38" height="34" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">60</span>
+        <span style="font-family:宋体; font-size:24pt">°</span>
+        <span style="font-family:宋体; font-size:24pt">。</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:Calibri; font-size:26pt">L9110</span>
+        <span style="font-family:宋体; font-size:26pt">两路</span>
+        <span style="font-family:宋体; font-size:26pt">电机驱动</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/4.jpg" width="208" height="193" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">4</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">L9110</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">两路</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">电机驱动</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">这是一个</span>
+        <span style="font-family:宋体; font-size:24pt">双</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">L9110S</span>
+        <span style="font-family:宋体; font-size:24pt">的</span>
+        <span style="font-family:宋体; font-size:24pt">电机驱动，</span>
+        <span style="font-family:宋体; font-size:24pt">供电电压</span>
+        <span style="font-family:宋体; font-size:24pt">在</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">2.5</span>
+        <span style="font-family:宋体; font-size:24pt">～</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">12</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">V</span>
+        <span style="font-family:宋体; font-size:24pt">之间，</span>
+        <span style="font-family:宋体; font-size:24pt">最大</span>
+        <span style="font-family:宋体; font-size:24pt">工作电流为</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">0.8</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">A</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">可以</span>
+        <span style="font-family:宋体; font-size:24pt">同时驱动</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">2</span>
+        <span style="font-family:宋体; font-size:24pt">个</span>
+        <span style="font-family:宋体; font-size:24pt">直流电机。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">由于单片机</span>
+        <span style="font-family:宋体; font-size:24pt">端子</span>
+        <span style="font-family:宋体; font-size:24pt">不能提供足够大的电流，</span>
+        <span style="font-family:宋体; font-size:24pt">小车</span>
+        <span style="font-family:宋体; font-size:24pt">运动速度很慢，</span>
+        <span style="font-family:宋体; font-size:24pt">因此</span>
+        <span style="font-family:宋体; font-size:24pt">我们增加了</span>
+        <span style="font-family:宋体; font-size:24pt">该</span>
+        <span style="font-family:宋体; font-size:24pt">电机驱动</span>
+        <span style="font-family:宋体; font-size:24pt">模块，单片机提供控制信号，小车由电池直接供电</span>
+        <span style="font-family:宋体; font-size:24pt">。</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:宋体; font-size:26pt">整车组合</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="font-family:Calibri; font-size:20pt">&nbsp;</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">我们小车端</span>
+        <span style="font-family:宋体; font-size:24pt">电路系统连线如上图所示，</span>
+        <span style="font-family:宋体; font-size:24pt">通过</span>
+        <span style="font-family:宋体; font-size:24pt">在不同端口置高电位或者低电位，</span>
+        <span style="font-family:宋体; font-size:24pt">设置</span>
+        <span style="font-family:宋体; font-size:24pt">不同的</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">PWM</span>
+        <span style="font-family:宋体; font-size:24pt">来控制电机、</span>
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">进而</span>
+        <span style="font-family:宋体; font-size:24pt">控制小车的运动。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">一开始</span>
+        <span style="font-family:宋体; font-size:24pt">的测试阶段，</span>
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">采用移动电源为</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">Arduino</span>
+        <span style="font-family:宋体; font-size:24pt">系统</span>
+        <span style="font-family:宋体; font-size:24pt">供电，</span>
+        <span style="font-family:宋体; font-size:24pt">但这种</span>
+        <span style="font-family:宋体; font-size:24pt">方法占位置且重量过大，</span>
+        <span style="font-family:宋体; font-size:24pt">因此</span>
+        <span style="font-family:宋体; font-size:24pt">我们自制了</span>
+        <span style="font-family:宋体; font-size:24pt">电源进行</span>
+        <span style="font-family:宋体; font-size:24pt">供电。</span>
+        <span style="font-family:宋体; font-size:24pt">解决了</span>
+        <span style="font-family:宋体; font-size:24pt">电力问题之后，</span>
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">又</span>
+        <span style="font-family:宋体; font-size:24pt">发现</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">Arduino</span>
+        <span style="font-family:宋体; font-size:24pt">对</span>
+        <span style="font-family:宋体; font-size:24pt">电机供电不足，</span>
+        <span style="font-family:宋体; font-size:24pt">因此</span>
+        <span style="font-family:宋体; font-size:24pt">我们增加了电机驱动板解决了这个问题。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:center; text-indent:0.2pt; widows:0">
+        <img src="./img/5.jpg" width="251" height="168" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline">
+        <img src="./img/6.jpg" width="251" height="168" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline">
+        <img src="./img/7.jpg" width="251" height="168" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">5</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：整车外观</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+    
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.2.2</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">软件部分</span>
+      </h3>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/8.jpg" width="525" height="455" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">6</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">小车</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">程序流程图</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:宋体; font-size:26pt">程序设计</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="width:1pt; text-indent:0pt; display:inline-block"></span>
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">用</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">Arduino 1.6.9</span>
+        <span style="font-family:宋体; font-size:24pt">进行</span>
+        <span style="font-family:宋体; font-size:24pt">程序设计，</span>
+        <span style="font-family:宋体; font-size:24pt">主要</span>
+        <span style="font-family:宋体; font-size:24pt">思路是电脑通过蓝牙传送一个字符给单片机，</span>
+        <span style="font-family:宋体; font-size:24pt">单片机接收不同字符，进而</span>
+        <span style="font-family:宋体; font-size:24pt">控制电机</span>
+        <span style="font-family:宋体; font-size:24pt">与舵机状态</span>
+        <span style="font-family:宋体; font-size:24pt">。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">主要</span>
+        <span style="font-family:宋体; font-size:24pt">有</span>
+        <span style="font-family:宋体; font-size:24pt">以下几种指令：</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">前进</span>
+        <span style="font-family:宋体; font-size:24pt">（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">F</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机正转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">正向</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">左转（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">L</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机正转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机左转</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">前进</span>
+        <span style="font-family:宋体; font-size:24pt">（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">R</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机正转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">右转</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">右后（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">X</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机</span>
+        <span style="font-family:宋体; font-size:24pt">反</span>
+        <span style="font-family:宋体; font-size:24pt">转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">右转</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">左后（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">Z</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机</span>
+        <span style="font-family:宋体; font-size:24pt">反</span>
+        <span style="font-family:宋体; font-size:24pt">转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机左转</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">停止（</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">S</span>
+        <span style="font-family:宋体; font-size:24pt">）：电机不转，</span>
+        <span style="font-family:宋体; font-size:24pt">舵机</span>
+        <span style="font-family:宋体; font-size:24pt">正向</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="font-family:宋体; font-size:24pt">对于电机转速，我们</span>
+        <span style="font-family:宋体; font-size:24pt">通过</span>
+        <span style="font-family:宋体; font-size:24pt">控制发送至电机驱动板</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">I/O</span>
+        <span style="font-family:宋体; font-size:24pt">端口</span>
+        <span style="font-family:宋体; font-size:24pt">的</span>
+        <span style="font-family:宋体; font-size:24pt">信号</span>
+        <span style="font-family:宋体; font-size:24pt">占空比来</span>
+        <span style="font-family:宋体; font-size:24pt">进行</span>
+        <span style="font-family:宋体; font-size:24pt">控制。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/9.jpg" width="439" height="94" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+        <span style="font-family:宋体; font-size:24pt">对于</span>
+        <span style="font-family:宋体; font-size:24pt">舵机的控制，</span>
+        <span style="font-family:宋体; font-size:24pt">我们使用了</span>
+        <span style="font-family:宋体; font-size:24pt">一个控制舵机的库</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">——“</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">servo.h</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">”</span>
+        <span style="font-family:宋体; font-size:24pt">。</span>
+        <span style="font-family:宋体; font-size:24pt">先给自己的舵机建立一个对象</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">myservo</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">并用</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">myservo.attach(int I/O)</span>
+        <span style="font-family:宋体; font-size:24pt">来绑定，</span>
+        <span style="font-family:宋体; font-size:24pt">通过</span>
+        <span style="font-family:宋体; font-size:24pt">函数</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">myservo.write(int angle)</span>
+        <span style="font-family:宋体; font-size:24pt">来控制舵机的角度。</span>
+        <span style="font-family:宋体; font-size:24pt">部分</span>
+        <span style="font-family:宋体; font-size:24pt">代码如下图所示。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/10.jpg" width="378" height="506" alt="./img/10.jpg" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">7</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">小车端</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">代码变量常量定义及串口初始化</span></p>
+      <p style="margin:0pt 0pt 0pt 35.45pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0">
+        <span style="font-family:Wingdings; font-size:26pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;"></span>
+        <span style="font-family:宋体; font-size:26pt">程序调试</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="width:1pt; text-indent:0pt; display:inline-block"></span>
+        <span style="font-family:宋体; font-size:24pt">在</span>
+        <span style="font-family:宋体; font-size:24pt">跟主机端一起调试之前，</span>
+        <span style="font-family:宋体; font-size:24pt">我们</span>
+        <span style="font-family:宋体; font-size:24pt">使用</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">SSCOM3.2</span>
+        <span style="font-family:宋体; font-size:24pt">串口</span>
+        <span style="font-family:宋体; font-size:24pt">调试工具来进行调试。在用蓝牙跟</span>
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">hc-06</span>
+        <span style="font-family:宋体; font-size:24pt">建立</span>
+        <span style="font-family:宋体; font-size:24pt">了连接以后，</span>
+        <span style="font-family:宋体; font-size:24pt">选择</span>
+        <span style="font-family:宋体; font-size:24pt">对应的串口，</span>
+        <span style="font-family:宋体; font-size:24pt">发送</span>
+        <span style="font-family:宋体; font-size:24pt">指定的字符串，</span>
+        <span style="font-family:宋体; font-size:24pt">看</span>
+        <span style="font-family:宋体; font-size:24pt">下车的运行情况。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/11.jpg" width="402" height="323" alt="./img/11.jpg" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">8</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">SSCOM</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">调试</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">界面</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; text-indent:20pt; widows:0">
+        <span style="width:1pt; text-indent:0pt; display:inline-block"></span>
+        <span style="font-family:宋体; font-size:24pt">经测试</span>
+        <span style="font-family:宋体; font-size:24pt">，</span>
+        <span style="font-family:宋体; font-size:24pt">发送</span>
+        <span style="font-family:宋体; font-size:24pt">指令后小车能按指令运动，则</span>
+        <span style="font-family:宋体; font-size:24pt">测试</span>
+        <span style="font-family:宋体; font-size:24pt">成功。</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">&nbsp;</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">&nbsp;</span></p>
+      <p style="font-size:24pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">&nbsp;</span></p>
+      <p id="pc" style="font-size:24pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:24pt">&nbsp;</span></p>
+      <h2 style="font-size:28pt; line-height:173%; margin:13pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+      
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold">2.2</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">PC端实现</span>
+      </h2>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+      
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.2.1</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">概述</span>
+      </h3>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/12.jpg" width="168" height="488" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">9</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">工程流程图</span></p>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:Consolas; font-size:20pt">&nbsp;</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+      
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.2.2</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">图像处理</span>
+      </h3>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/13.jpg" width="554" height="417" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">10</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图形处理流程图</span></p>
+      <p style="margin:0pt; text-align:center">
+        <img src="./img/14.jpg" width="352" height="368" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; text-align:center">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">11</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">主机端生成的角点</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+ 
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.2.3</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">跟踪小车</span>
+      </h3>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/15.jpg" width="527" height="437" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">12</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">跟踪小车流程图</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+ 
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">2.2.4</span>
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">发送指令</span>
+      </h3>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/16.jpg" width="554" height="446" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">13</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">发送指令流程图</span></p>
+      <p style="margin:0pt 0pt 0pt 18pt; orphans:0; text-align:center; widows:0">
+        <img src="./img/17.jpg" width="554" height="380" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"></p>
+      <p style="margin:0pt 0pt 0pt 18pt; orphans:0; text-align:center; widows:0">
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">图</span>
+        <span style="color:#5a5a5a; font-family:Calibri; font-size:20pt; font-variant:small-caps">14</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">：</span>
+        <span style="color:#5a5a5a; font-family:宋体; font-size:20pt; font-variant:small-caps">端口初始化显示界面</span></p>
+	</div>
+</div>
+
+<div class="about" >
+    <label class="line" ></label>
+      	<h4 style="width:100%; text-align:center"><a href="./Code_Group25_KC2B.rar">代码下载（右键另存为）</a></h4>
+    <label class="line"></label>
+</div>
+
+
+<!-- //Gallery Section -->
+
+<!-- Events Section -->
+<div class="events" id="events">
+	<div class="container">
+        <h3 id="feaimp">特色及改进</h3>
+        <label class="line"></label>
+      <p>
+      <h2 style="font-size:28pt; line-height:173%; margin:13pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0; color:#ffffff">
+ 
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold">3.2</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">项目特色</span>
+      </h2>
+      </p>
+      <p>
+      <ol type="1" style="margin:0pt; padding-left:0pt; color:#ffffff">
+        <li style="font-family:Calibri; font-size:20pt; margin:0pt 0pt 0pt 39pt; orphans:0; text-align:justify; text-indent:0pt; widows:0">
+          <span style="font-family:宋体; font-size:20pt">算法效率高</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">采用即时发送即时反馈的算法</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">并未加入一些延时或是等待的命令</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">使得小车运行流畅</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">没有迟钝或是卡顿的现象</span>
+          <span style="font-family:宋体; font-size:20pt">。</span></li>
+      </ol>
+      </p>
+      <p style="margin:0pt 0pt 0pt 39pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:Calibri; font-size:20pt">&nbsp;</span></p>
+      <ol start="2" type="1" style="margin:0pt; padding-left:0pt; color:#ffffff">
+        <li style="font-family:Calibri; font-size:20pt; margin:0pt 0pt 0pt 39pt; orphans:0; text-align:justify; text-indent:0pt; widows:0">
+          <span style="font-family:宋体; font-size:20pt">小车运行精度可控</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">即可调整小车运行的容错率</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">以平衡精确度与稳定性</span>
+          <span style="font-family:宋体; font-size:20pt">。</span>
+          <span style="font-family:宋体; font-size:20pt">机理为通过调整角点的密度</span>
+          <span style="font-family:宋体; font-size:20pt">，实现</span>
+          <span style="font-family:宋体; font-size:20pt">运行路线的精度的可控性</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">测试过程中我们使用过</span>
+          <span style="font-family:Calibri; font-size:20pt">50</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:Calibri; font-size:20pt">70</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:Calibri; font-size:20pt">100</span>
+          <span style="font-family:宋体; font-size:20pt">三种角点密度（数字代表角点之间的图像像素数量）</span></li>
+      </ol>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:Calibri; font-size:20pt">&nbsp;</span></p>
+      <ol start="3" type="1" style="margin:0pt; padding-left:0pt; color:#ffffff">
+        <li style="font-family:Calibri; font-size:20pt; margin:0pt 0pt 0pt 39pt; orphans:0; text-align:justify; text-indent:0pt; widows:0">
+          <span style="font-family:宋体; font-size:20pt">简约风格设计</span>
+          <span style="font-family:宋体; font-size:20pt">。</span>
+          <span style="font-family:宋体; font-size:20pt">在提高美观度的同时也可以减少图像识别带来的错误</span>
+          <span style="font-family:宋体; font-size:20pt">，</span>
+          <span style="font-family:宋体; font-size:20pt">方便调试提高稳定性</span>
+          <span style="font-family:宋体; font-size:20pt">。</span></li>
+      </ol>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:Calibri; font-size:20pt">&nbsp;</span></p>
+      <ol start="4" type="1" style="margin:0pt; padding-left:0pt; color:#ffffff">
+        <li style="font-family:Calibri; font-size:20pt; margin:0pt 0pt 0pt 39pt; orphans:0; text-align:justify; text-indent:0pt; widows:0">
+          <span style="font-family:宋体; font-size:20pt">一键开关式控制，实现小车运行的全自动化</span></li>
+      </ol>
+      <h2 style="font-size:28pt; line-height:173%; margin:13pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0; color:#ffffff">
+
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold">3.2</span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">优化方案</span>
+      </h2>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">3.2.1</span>
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">转弯半径</span>
+
+      </h3>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">问题：自制小车过大，致使转弯半径过大。</span></p>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">解决方案：</span>
+        <span style="font-family:宋体; font-size:20pt">小车很</span>
+        <span style="font-family:宋体; font-size:20pt">“</span>
+        <span style="font-family:宋体; font-size:20pt">大</span>
+        <span style="font-family:宋体; font-size:20pt">”</span>
+        <span style="font-family:宋体; font-size:20pt">可以说是我们的一个特色</span>
+        <span style="font-family:宋体; font-size:20pt">，但是为了追求“高富帅”还是要付出一定的代价。针对这个问题，我们拓展了小车的控制指令，加入了后退以及后退转弯等一系列新的指令。在急转弯处进行后退转弯可以减小转弯半径。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0; color:#ffffff">
+        <span style="font-family:Calibri; font-size:20pt">&nbsp;</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">3.2.2</span>
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">小车防抖</span>
+      </h3>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">问题</span>
+        <span style="font-family:宋体; font-size:20pt">：后退指令的加入导致小车易在阈值处前后抖动。</span></p>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">解决方案</span>
+        <span style="font-family:宋体; font-size:20pt">：为了克服这个问题（即前后交替挪动而不行进），我们又加入了一些和滞回比较器或是施密特触发器原理相同的控制算法，使前进和后退的阈值之间存在一定的缓冲区，不会在前进瞬间又发出后退指令，成功解决了问题。</span></p>
+      <h3 style="font-size:28pt; line-height:173%; margin:13pt 0pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0">
+
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold">3.2.3</span>
+          <span style="font-family:Calibri; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">舵机响应速度</span>
+      </h3>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">问题</span>
+        <span style="font-family:宋体; font-size:20pt">：</span>
+        <span style="font-family:宋体; font-size:20pt">舵机转向较慢</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">跟不上发送指令的速度</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">导致转弯不及时。</span></p>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">解决方案</span>
+        <span style="font-family:宋体; font-size:20pt">：在主机端给转弯指令加入一段延时，并根据实际情况调整延时时间，已达到最流畅的效果。</span></p>
+      <h2 style="font-size:28pt; line-height:173%; margin:13pt 0pt; orphans:0; page-break-after:avoid; page-break-inside:avoid; text-align:justify; widows:0; color:#ffffff">
+     
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold">3.3</span>
+          <span style="font-family:&#39;Calibri Light&#39;; font-size:28pt; font-weight:bold"></span>
+          <span style="font-family:宋体; font-size:28pt; font-weight:bold">后续改进</span>
+      </h2>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">问题</span>
+        <span style="font-family:宋体; font-size:20pt">：</span></p>
+      <p style="margin:0pt 0pt 0pt 18pt; orphans:0; text-align:justify; widows:0; color:#ffffff">
+        <span style="font-family:宋体; font-size:20pt">由于即时性</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">所以算法的复杂度较高</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">主机负荷较大</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">偶有运算跟不上的问题出现</span>
+        <span style="font-family:宋体; font-size:20pt">。</span>
+        <span style="font-family:宋体; font-size:20pt">所以仍需改进算法</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">减少资源依赖</span>
+        <span style="font-family:宋体; font-size:20pt">，</span>
+        <span style="font-family:宋体; font-size:20pt">这样也可以提高小车的最高运行速度</span>
+        <span style="font-family:宋体; font-size:20pt">。</span></p>
+      <p style="margin:0pt 0pt 0pt 18pt; orphans:0; text-align:justify; widows:0; color:#ffffff">
+        <span style="font-family:&#39;Times New Roman&#39;; font-size:20pt">&nbsp;</span></p>
+      <p style="margin:0pt 0pt 0pt 21.3pt; orphans:0; text-align:justify; text-indent:-21pt; widows:0; color:#ffffff">
+        <span style="font-family:Wingdings; font-size:20pt"></span>
+        <span style="font:7.0pt &#39;Times New Roman&#39;">&nbsp;</span>
+        <span style="font-family:宋体; font-size:20pt">问题</span>
+        <span style="font-family:宋体; font-size:20pt">：</span></p>
+      <p style="margin:0pt 0pt 0pt 18pt; orphans:0; text-align:justify; widows:0; color:#ffffff">
+        <span style="font-family:宋体; font-size:20pt">小车高度过高</span>
+        <span style="font-family:宋体; font-size:20pt">，导致在摄像头拍摄角度偏斜时，小车行进路线有偏斜。</span></p>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!--// Events Section -->
+<!-- Clients Section -->
+<div class="clients" id="thoughts">
+	<div class="container">
+		<h3 id="thoughts">组员体悟</h3>
+		<label class="line"></label>
+		<div class="col-md-2 col-sm-2 cbl">
+		<h4>包伟铭</h4>
+		</div>
+		<div class="col-md-10 col-sm-10 cbr">
+		<p>　　本学期我们运用课程相关知识，实现了电脑主机自动控制小车循迹走黑线。综合考虑，我们选择了自制小车。电脑端基于OpenCV库函数，调用Windows API，通过蓝牙连接小车发指令，并实时捕捉摄像头图像，处理实现闭环控制。小车端我们选用了相对熟悉的Arduino开发平台。由于自己之前没有接触过OpenCV，在前期调试时，也碰到了不少问题，但辛苦是有价值的，收获良多。</p>
+		<p>　　小车端由于已修课程及课外已有所接触，但动手实践，实现这些功能，过程中仍会出现许许多多意料之外的突发状况。前期反复设想心中再有底，到实际动手是仍会出现或多或少的问题需要尝试解决。我想这也是工程的魅力所在。而只有潜下心，全情投入，面对种种出现的问题有恒心、毅力，不浮躁，轻言放弃，最终才能在这最困难也是最有收获的阶段真正收获更多。</p>
+		<p>　　感谢组员们全情参与及前人、老师的指导帮助，在实现整个项目的过程中，我收获了一份记忆深刻的体验，在相关理论、技术应用能力提高的过程中，更收获了许多兴奋与快乐！</p>
+		</div>
+    </div>
+    <label class="line"></label>
+    <div class="container">
+		<div class="col-md-2 col-sm-2 cbl">
+		<h4>刘兴阳</h4>
+		</div>
+		<div class="col-md-10 col-sm-10 cbr">
+		<p>　　工科创这个课程给了我们一个将理论知识付诸实践的机会，只有真正让代码在小车上跑起来，才会发现理论上优秀的代码要能够在实际环境中适用还需要一个很长的调试过程。原来，我们觉得非常合理的算法总会因为实际情况的限制（例如光线情况不佳、马达动力不足）而没有设想的效果好。当然，在发现问题与解决问题的过程中我们也学习了很多解决问题的思路，跟队友之间也建立了深厚的友谊。</p>
+		<p>　　我们小组自己采购并组装了小车，在这个过程中我们对硬件有了更深层次的认识，例如Arduino的开发、电机驱动板的使用等等。这是一个很有意思、很值得回忆的经历，仿佛回到了小时候自己组装四驱车的样子。</p>
+		<p>　　最后，非常感谢老师的指导，也非常感谢耐心而热情的助教。此外，我的队友（也是我的室友）也做出了很多的贡献，跟他们一起合作是一个非常快乐的经历。</p>
+		</div>
+    </div>
+    <label class="line"></label>
+    <div class="container">
+		<div class="col-md-2 col-sm-2 cbl">
+		<h4>罗　晶</h4>
+		</div>
+		<div class="col-md-10 col-sm-10 cbr">
+		<p>　　参与这个课程，实现小车走黑线是一个不小的挑战。之前我从未接触过openCv的图像处理功能，对蓝牙串口、小车端单片机也知之甚少。经过一个学期不间断的学习和探索，我终于初步掌握了这些知识并进行了实践。</p>
+		<p>　　总体做下来，最大的感受就是，写代码的时间远远没有调试的时间长，开始时小车会完全不按照预计的位置走，转弯也出现了很大的问题，十分考验自学能力和开脑洞的能力。还有在蓝牙模块花了不少时间找问题，电脑蓝牙时常故障，最终的解决方案是使用了一个外接的蓝牙适配器。</p>
+		<p style="padding-bottom:10pt">　　感谢老师的指导和帮助，助教在最后守着我们录视频也辛苦了。当然要感谢我的室友们，在很多环节如蓝牙连接、调试PC端代码中遇到困难和故障，是他们给予我支持和鼓励。</p>
+		</div>
+    </div>
+
+    <label class="line"></label>
+
+    <div class="container">
+		<div class="col-md-2 col-sm-2 cbl">
+		<h4>庞　博</h4>
+		</div>
+		<div class="col-md-10 col-sm-10 cbr">
+		<p>　　通过学习《工程实践与科技创新Ⅱ-B》这门课程，使得我对于库函数的使用有了更深的了解，使我对编程的理解和使用都有所提高。这也是我第一次接触图像处理，本来以前认为非常深奥的东西，通过这一次的学习之后，我有了新的看法，也不再对这一块儿一无所知。这门课让我学到了很多。</p>
+		<p>　　实际成果的诞生给予了我们所有成员极大的成就感，提高了我学习编程语言的积极性和自信心，让我感受到了设计与创新的乐趣。</p>
+		<p>　　最后感谢小组成员的共同努力与配合，感谢老师的指导。</p>
+		</div>
+    </div>
+</div>
+<!--/ Clients Section -->
+
+
+<!-- Contact Section -->
+<div class="contact" id="contact">
+	<div class="container">
+		<h3 id="appendix">参考文献</h3>
+		<label class="line"></label>
+		<p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[1].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">学习</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">OpencCV2.4.9</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">（一）</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">--- OpenCV</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">+</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">VS</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">2012</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">环境配置</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">.</span>
+        <a style="color:#ffffff" href="http://blog.csdn.net/liukun321/%20article/details/38373277" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://blog.csdn.net/liukun321/ article/details/38373277</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2014-08-04]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[2].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">OpenCV</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">库函数大全</span>
+        <a style="color:#ffffff" href="http://wenku.baidu.com/link?url=g7JNDFu0NeB6r6ddJVXWC2EJq68C2El1sqVSUHmfo1-e22TwualPwUQP4TKKIVgekfxJhx7p6cscJnq08IX71iopf4flP-ypBdam8fG9LIq" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://wenku.baidu.com/link?url=g7JNDFu0NeB6r6ddJVXWC2EJq68C2El1sqVSUHmfo1-e22TwualPwUQP4 TKKIVgekfxJhx7p6cscJnq08IX71iopf4flP-ypBdam8fG9LIq</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2013-2-26]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[3].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">OpenCV</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">入门教程</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">.</span>
+        <a style="color:#ffffff" href="http://blog.csdn.net/column/details/opencv-tutorial.html" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://blog.csdn.net/column/details/opencv-tutorial.html</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2014-6-22]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[4].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">OpenCV</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt"></span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">官方</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">API.</span>
+        <a style="color:#ffffff" href="http://docs.opencv.org/2.4/modules/refman.html" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://docs.opencv.org/2.4/modules/refman.html</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2016-5-25]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[5].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Arduino Uno Introduction.</span>
+        <a style="color:#ffffff" href="https://www.arduino.cc/en/Main/ArduinoBoardUno" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">https://www.arduino.cc/en/Main/ArduinoBoardUno</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2016.6.24]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[6].</span>
+        <span style="width:3.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Arduino</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Meya</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Introduction.</span>
+        <a style="color:#ffffff" href="https://www.arduino.cc/en/Main/ArduinoBoardMega" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">https://www.arduino.cc/en/Main/ArduinoBoardMega</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2016.6.24]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[7].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">分享</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">ARDUINO</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">各版本引脚图（</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">2014</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">版）</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">.</span>
+        <a style="color:#ffffff" href="http://www.geek-workshop.com/thread-11826-1-1.html" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://www.geek-workshop.com/thread-11826-1-1.html</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">.  [2014-12-4/2015-7-29]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[8].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">DIYer</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">修炼：舵机知识扫盲</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">.</span>
+        <a style="color:#ffffff" href="http://www.guokr.com/article/5292/" target="_blank">
+          <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">http://www.guokr.com/article/5292/</span></a>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">. [2011-01-17/2015-7-29]</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[9].</span>
+        <span style="width:7.34pt; text-indent:0pt; display:inline-block"></span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Arduino</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">模块库文件自带</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">Sample</span></p>
+      <p style="margin:0pt 0pt 0pt 12pt; orphans:0; padding-left:20pt; text-align:justify; text-indent:-20pt; widows:0">
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">[10</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">].</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">《</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">工程实践与科技创新</span>
+        <span style="color:#ffffff; font-family:宋体; font-size:15pt">Ⅱ</span>
+        <span style="color:#ffffff; font-family:'Times New Roman'; font-size:15pt">-B</span>
+        <span style="color:#ffffff; font-family:黑体; font-size:15pt">》课程材料</span></p>
+	</div>
+</div>
+<!-- /Contact Section -->
+<!-- Social Icons Section -->
+<div class="socialicons" id="gratitude">
+	<div class="container">
+	    <h3>致　谢</h3>
+		<label class="line"></label>
+		<p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:黑体; font-size:20pt">　　感谢《工程实践与科技创新Ⅱ</span>
+        <span style="font-family:'Times New Roman'; font-size:20pt">-B</span>
+        <span style="font-family:黑体; font-size:20pt">》课程组张士文等老师及助教的付出与指导。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:黑体; font-size:20pt">　　感谢该门课程让我们获得这一份充实、有意义的学习体验。学习探索的过程中，让我们的实践能力、工程意识、团队协作、创新精神等方面都深感收获良多。</span></p>
+      <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
+        <span style="font-family:黑体; font-size:20pt">　　感谢课程中小组成员积极参与、交流探讨，分工协作，共同进步。</span></p>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- /Social Icons Section -->
+<!-- Footer Section -->
+<div class="footer">
+	<div class="container">
+		<p> Jun. 25 2016 | All Rights Reserved | Design by <a href="Mailto:747277853@qq.com">Bao Weiming</a></p>
+	</div>
+</div>
+<!-- //Footer Section -->
+<!-- js files -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Scripts For Navbar -->
+
+	<script src="js/jquery.scrollTo.min.js"></script>
+
+<!--// Scripts For Navbar -->
+
+<!-- Scripts For Gallery Section -->
+	<script src="js/jquery.localScroll.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/common.js"></script>
+<!--// Scripts For Gallery Section -->
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href="#myPage"]").on("click", function(event) {
+
+  // Store hash
+  var hash = this.hash;
+
+  // Using jQuery"s animate() method to add smooth page scroll
+  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  $("html, body").animate({
+    scrollTop: $(hash).offset().top,
+  }, 900, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+    });
+  });
+})
+</script>
+
+<!-- /js files -->
+<!-- Script For Number Scrolling -->
+	<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+		
+<!-- //Script For Number Scrolling -->
+<script src="js/responsiveslides.min.js"></script>
+			<script>
+			// You can also use "$(window).load(function() {"
+			$(function () {
+				// Slideshow 4
+				$("#slider3").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						before: function () {
+							$(".events").append();
+						},
+						after: function () {
+							$(".events").append();
+						}
+					});				
+				});
+			</script>
+</body>
+</html>
