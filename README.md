@@ -15,15 +15,21 @@
 **TraCAR** is a course project for *(EI228) Science and Technology Innocation (Part 2-B)* (Spring 2016).
 
 The project is composed of *a self-made car* with an Arduino microcontroller and *a PC program* utilizing OpenCV in C++.
+
 After initialization, the PC program will automatically capture and process the image of the "runway" (black lines) from the webcam and control the car to go along the black line in real-time via Bluetooth. 
 
 
 ## File Structure
 PC-end/				*files for the PC program*
+
 PC-end/build/		*an executable file for the PC program*
+
 PC-end/src/			*the source code for the PC program*
+
 PC-end/vcproj/		*Visual C++ project directory*
+
 car-end/src/		*Arduino source code*
+
 website/			*files for the website*
 
 
