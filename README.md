@@ -20,18 +20,13 @@ After initialization, the PC program will automatically capture and process the 
 
 
 ## File Structure
-PC-end/				*files for the PC program*
 
-PC-end/build/		*an executable file for the PC program*
-
-PC-end/src/			*the source code for the PC program*
-
-PC-end/vcproj/		*Visual C++ project directory*
-
-car-end/src/		*Arduino source code*
-
-website/			*files for the website*
-
+|PC-end/|				*files for the PC program*|
+|PC-end/build/|		*an executable file for the PC program*|
+|PC-end/src/|			*the source code for the PC program*|
+|PC-end/vcproj/|		*Visual C++ project directory*|
+|car-end/src/|		*Arduino source code*|
+|website/|			*files for the website*|
 
 ## Webpage
 
