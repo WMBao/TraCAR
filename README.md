@@ -21,7 +21,7 @@ After initialization, the PC program will automatically capture and process the 
 
 ## File Structure
 
-|File Path|Comments|
+|Path|Discription|
 |:---|:---|
 |PC-end/   |*files for the PC program*|
 |PC-end/build/   |*an executable file for the PC program*|
