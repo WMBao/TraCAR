@@ -44,6 +44,8 @@ Focus on OpenCV code prototype development, the hardware of the Bluetooth car, j
 
 Lead the development of the entire project.
 
+Collaborate with Xingyang Liu, Jing Luo and Bo Pang.
+
 
 ## Details(selected)
 
