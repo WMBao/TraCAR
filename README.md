@@ -1,11 +1,11 @@
 # TraCAR
  --- A Bluetooth car automatically controlled by a PC with a webcam to trace black lines.
 
-### Video 1 --- Desk
+### Video 1 
 
 [![TraCAR-demo-1-en](http://img.youtube.com/vi/ktlbX7IkARQ/0.jpg)](http://www.youtube.com/watch?v=ktlbX7IkARQ)
 
-### Video 2 --- Field Test
+### Video 2 
 
 [![TraCAR-demo-dorm-en](http://img.youtube.com/vi/PC991xsAWYM/0.jpg)](http://www.youtube.com/watch?v=PC991xsAWYM)
 
@@ -31,7 +31,7 @@ The link above points to the report webpage (in Chinese) with implementation det
 ## Contribution
 Focus on OpenCV code prototype development, the hardware of the Bluetooth car, joint debugging and report webpage.
 
-Lead the development of the whole system.
+Lead the development of the entire project.
 
 
 ## Details(selected)
@@ -40,14 +40,20 @@ Lead the development of the whole system.
 
 * PC and the car are connected via Bluetooth. At the PC-end, related Windows APIs are called for the Bluetooth communication. An HC-06 Bluetooth module is used for the car, which is connected to the microcontroller (Arduino) via serial ports.
 
-* Figure 1 illustrates the connections among Arduino system modules.
-
-![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/5.jpg)
-
-
-* Figure 2 & 3 presents an overview of our self-made car.
+* Figure 1 & 2 presents an overview of our self-made car.
 
 ![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/7.jpg)
 ![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/6.jpg)
 
 
+* Figure 3 illustrates the connections among Arduino system modules.
+
+![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/5.jpg)
+
+* Once an image is captured, sequentially the following steps are conducted.
+	- Perspective transformation
+	- Image binarization
+	- Line thinning
+	- Corner detection
+
+* The car is marked with two colored points, a red point indicating the head and a blue point indicating its tail.
