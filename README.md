@@ -55,13 +55,13 @@ Collaborate with Xingyang Liu, Jing Luo and Bo Pang.
 
 * Figure 1 & 2 presents an overview of our self-made car.
 
-![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/7.jpg)
-![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/6.jpg)
+![Missing image](https://wmbao.github.io/TraCAR/img/7.jpg)
+![Missing image](https://wmbao.github.io/TraCAR/img/6.jpg)
 
 
 * Figure 3 illustrates the connections among Arduino system modules.
 
-![Missing image](https://github.com/WMBao/TraCAR/blob/master/website/img/5.jpg)
+![Missing image](https://wmbao.github.io/TraCAR/img/5.jpg)
 
 * Once an image is captured, sequentially the following steps are conducted.
 	- Perspective transformation
