@@ -23,11 +23,11 @@ After initialization, the PC program will automatically capture and process the 
 
 |Path|Discription|
 |:---|:---|
-|PC-end/   |*files for the PC program*|
-|PC-end/build/   |*an executable file for the PC program*|
-|PC-end/src/   |*the source code for the PC program*|
-|PC-end/vcproj/   |*Visual C++ project directory*|
-|car-end/src/   |*Arduino source code*|
+|PC-side/   |*files for the PC program*|
+|PC-side/build/   |*an executable file for the PC program*|
+|PC-side/src/   |*the source code for the PC program*|
+|PC-side/vcproj/   |*Visual C++ project directory*|
+|car-side/src/   |*Arduino source code*|
 |website/   |*files for the website*|
 
 ## Webpage
@@ -49,9 +49,9 @@ Collaborate with Xingyang Liu, Jing Luo and Bo Pang.
 
 ## Details(selected)
 
-* The PC-end program is implemented in C++ with OpenCV 2.4.
+* The PC-side program is implemented in C++ with OpenCV 2.4.
 
-* PC and the car are connected via Bluetooth. At the PC-end, related Windows APIs are called for the Bluetooth communication. An HC-06 Bluetooth module is used for the car, which is connected to the microcontroller (Arduino) via serial ports.
+* PC and the car are connected via Bluetooth. At the PC-side, related Windows APIs are called for the Bluetooth communication. An HC-06 Bluetooth module is used for the car, which is connected to the microcontroller (Arduino) via serial ports.
 
 * Figure 1 & 2 presents an overview of our self-made car.
 
